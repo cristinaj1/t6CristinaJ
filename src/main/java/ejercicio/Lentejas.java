@@ -101,7 +101,8 @@ public final class Lentejas extends Potaje {
     public String toString() {
         return super.toString() + "Lentejas{" + "ingredientes=" + ingredientes + ", patatas=" + patatas + ", kilosLentejas=" + kilosLentejas + ", temperatura=" + temperatura + '}';
     }
-     @Override
+
+    @Override
     public boolean comestible() {
         boolean resultado;
         if (patatas == true) {
@@ -112,4 +113,7 @@ public final class Lentejas extends Potaje {
         return resultado;
     }
 
+    public int kilosTotales(int kilosNecesarios) {
+        return kilosNecesarios += kilosLentejas;
+    }
 }

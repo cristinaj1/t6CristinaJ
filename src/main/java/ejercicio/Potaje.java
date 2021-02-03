@@ -30,7 +30,6 @@ public class Potaje extends Comida {
         this.litrosDePotaje = litrosDePotaje;
     }
 
-
     public boolean isChorizo() {
         return chorizo;
     }
@@ -106,10 +105,10 @@ public class Potaje extends Comida {
 
     @Override
     public String toString() {
-        
-        return super.toString()+"Potaje{" + "ingredientes=" + ingredientes + ", chorizo=" + chorizo + ", morcilla=" + morcilla + ", platos=" + platos + ", litrosDePotaje=" + litrosDePotaje + '}';
+
+        return super.toString() + "Potaje{" + "ingredientes=" + ingredientes + ", chorizo=" + chorizo + ", morcilla=" + morcilla + ", platos=" + platos + ", litrosDePotaje=" + litrosDePotaje + '}';
     }
-    
+
     @Override
     public boolean comestible() {
         boolean resultado;
@@ -119,6 +118,10 @@ public class Potaje extends Comida {
             resultado = false;
         }
         return resultado;
+    }
+
+    public int platosTotales(int total) {
+        return total += platos;
     }
 
 }

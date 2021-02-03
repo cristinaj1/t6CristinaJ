@@ -17,15 +17,25 @@ public final class Abichuelas extends Potaje {
     private int temperatura;
     private int cantidadPlatos;
     private boolean calidad;//true buena calidad, false mala calidad.
+    private int horasPreparo;
 
     public Abichuelas() {
     }
 
-    public Abichuelas(String ingredientes, int temperatura, int cantidadPlatos, boolean calidad) {
+    public Abichuelas(String ingredientes, int temperatura, int cantidadPlatos, boolean calidad, int horasPreparo) {
         this.ingredientes = ingredientes;
         this.temperatura = temperatura;
         this.cantidadPlatos = cantidadPlatos;
         this.calidad = calidad;
+        this.horasPreparo = horasPreparo;
+    }
+
+    public String getIngredientes() {
+        return ingredientes;
+    }
+
+    public void setIngredientes(String ingredientes) {
+        this.ingredientes = ingredientes;
     }
 
     public int getTemperatura() {
@@ -52,13 +62,22 @@ public final class Abichuelas extends Potaje {
         this.calidad = calidad;
     }
 
+    public int getHorasPreparo() {
+        return horasPreparo;
+    }
+
+    public void setHorasPreparo(int horasPreparo) {
+        this.horasPreparo = horasPreparo;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 79 * hash + Objects.hashCode(this.ingredientes);
-        hash = 79 * hash + this.temperatura;
-        hash = 79 * hash + this.cantidadPlatos;
-        hash = 79 * hash + (this.calidad ? 1 : 0);
+        int hash = 7;
+        hash = 23 * hash + Objects.hashCode(this.ingredientes);
+        hash = 23 * hash + this.temperatura;
+        hash = 23 * hash + this.cantidadPlatos;
+        hash = 23 * hash + (this.calidad ? 1 : 0);
+        hash = 23 * hash + this.horasPreparo;
         return hash;
     }
 
@@ -83,6 +102,9 @@ public final class Abichuelas extends Potaje {
         if (this.calidad != other.calidad) {
             return false;
         }
+        if (this.horasPreparo != other.horasPreparo) {
+            return false;
+        }
         if (!Objects.equals(this.ingredientes, other.ingredientes)) {
             return false;
         }
@@ -103,6 +125,10 @@ public final class Abichuelas extends Potaje {
             resultado = false;
         }
         return resultado;
+    }
+
+    public int temperatura(int tiempoTotal) {
+        return tiempoTotal += horasPreparo;
     }
 
 }
