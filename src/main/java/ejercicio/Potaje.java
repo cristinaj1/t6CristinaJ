@@ -113,6 +113,15 @@ public class Potaje extends Comida {
         }
         return resultado;
     }
+    public boolean tieneChorizo() {
+        boolean resultado;
+        if (chorizo == true) {
+            resultado = true;
+        } else {
+            resultado = false;
+        }
+        return resultado;
+    }
 
     public int platosTotales(int total) {
         return total += platos;

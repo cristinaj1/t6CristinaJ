@@ -17,6 +17,7 @@ public final class Lentejas extends Potaje {
     private boolean patatas;
     private int kilosLentejas;
     private double temperatura;
+    private boolean chorizo;//true tiene, false no.
 
     public Lentejas() {
     }
@@ -100,6 +101,17 @@ public final class Lentejas extends Potaje {
     public boolean comestible() {
         boolean resultado;
         if (patatas == true) {
+            resultado = true;
+        } else {
+            resultado = false;
+        }
+        return resultado;
+    }
+
+    @Override
+    public boolean tieneChorizo() {
+        boolean resultado;
+        if (chorizo == true) {
             resultado = true;
         } else {
             resultado = false;

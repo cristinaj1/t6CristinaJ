@@ -17,6 +17,7 @@ public final class Abichuelas extends Potaje {
     private int temperatura;
     private int cantidadPlatos;
     private boolean calidad;//true buena calidad, false mala calidad.
+    private boolean chorizo;//true tiene, false no.
     private int horasPreparo;
 
     public Abichuelas() {
@@ -114,6 +115,17 @@ public final class Abichuelas extends Potaje {
     public boolean comestible() {
         boolean resultado;
         if (calidad == true) {
+            resultado = true;
+        } else {
+            resultado = false;
+        }
+        return resultado;
+    }
+
+    @Override
+    public boolean tieneChorizo() {
+        boolean resultado;
+        if (chorizo == true) {
             resultado = true;
         } else {
             resultado = false;
