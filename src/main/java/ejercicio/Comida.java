@@ -83,6 +83,11 @@ public class Comida {
         return true;
     }
 
+    @Override
+    public String toString() {
+        return "Comida{" + "comestible=" + comestible + ", sabor=" + sabor + ", ingredientes=" + ingredientes + '}';
+    }
+
     public boolean comestible() {
         boolean resultado;
         if (comestible == true) {

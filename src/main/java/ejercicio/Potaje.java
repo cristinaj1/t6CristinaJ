@@ -105,6 +105,12 @@ public class Potaje extends Comida {
     }
 
     @Override
+    public String toString() {
+        
+        return super.toString()+"Potaje{" + "ingredientes=" + ingredientes + ", chorizo=" + chorizo + ", morcilla=" + morcilla + ", platos=" + platos + ", litrosDePotaje=" + litrosDePotaje + '}';
+    }
+    
+    @Override
     public boolean comestible() {
         boolean resultado;
         if (morcilla == true) {
