@@ -5,6 +5,7 @@
  */
 package ejercicio;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -16,6 +17,7 @@ public class Comida {
     private boolean comestible;//true sí, false no
     private boolean sabor;//salado true, dulce false
     private String ingredientes;
+    ArrayList<Comida> comida;
 
     public Comida() {
     }
@@ -24,6 +26,7 @@ public class Comida {
         this.comestible = comestible;
         this.sabor = sabor;
         this.ingredientes = ingredientes;
+        comida = new ArrayList();
     }
 
     public boolean isComestible() {
@@ -86,6 +89,10 @@ public class Comida {
     @Override
     public String toString() {
         return "Comida{" + "comestible=" + comestible + ", sabor=" + sabor + ", ingredientes=" + ingredientes + '}';
+    }
+
+    public void anadirComida(Comida a) {
+        comida.add(a);
     }
 
     public boolean comestible() {

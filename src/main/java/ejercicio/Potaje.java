@@ -5,6 +5,7 @@
  */
 package ejercicio;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -18,6 +19,7 @@ public class Potaje extends Comida {
     private boolean morcilla;//True tiene, false no.
     private int platos;
     private double litrosDePotaje;
+    ArrayList<Potaje> potaje;
 
     public Potaje() {
     }
@@ -28,6 +30,7 @@ public class Potaje extends Comida {
         this.morcilla = morcilla;
         this.platos = platos;
         this.litrosDePotaje = litrosDePotaje;
+        potaje = new ArrayList();
     }
 
     public boolean isChorizo() {
@@ -113,6 +116,11 @@ public class Potaje extends Comida {
         }
         return resultado;
     }
+
+    public void anadirPotaje(Potaje a) {
+        potaje.add(a);
+    }
+
     public boolean tieneChorizo() {
         boolean resultado;
         if (chorizo == true) {

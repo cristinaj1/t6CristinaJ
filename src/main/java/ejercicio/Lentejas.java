@@ -5,6 +5,7 @@
  */
 package ejercicio;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -18,6 +19,7 @@ public final class Lentejas extends Potaje {
     private int kilosLentejas;
     private double temperatura;
     private boolean chorizo;//true tiene, false no.
+    ArrayList<Lentejas> lentejas;
 
     public Lentejas() {
     }
@@ -27,6 +29,7 @@ public final class Lentejas extends Potaje {
         this.patatas = patatas;
         this.kilosLentejas = kilosLentejas;
         this.temperatura = temperatura;
+        lentejas = new ArrayList();
     }
 
     public String getIngredientes() {
@@ -119,7 +122,11 @@ public final class Lentejas extends Potaje {
         return resultado;
     }
 
+    public void anadirLenteja(Lentejas a) {
+        lentejas.add(a);
+    }
+
     public int kilosTotales(int kilosNecesarios) {
-        return kilosNecesarios += kilosLentejas;
+        return kilosLentejas += kilosNecesarios;
     }
 }

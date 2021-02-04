@@ -5,6 +5,7 @@
  */
 package ejercicio;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -19,6 +20,7 @@ public final class Abichuelas extends Potaje {
     private boolean calidad;//true buena calidad, false mala calidad.
     private boolean chorizo;//true tiene, false no.
     private int horasPreparo;
+    ArrayList<Abichuelas> abichuelas;
 
     public Abichuelas() {
     }
@@ -29,6 +31,7 @@ public final class Abichuelas extends Potaje {
         this.cantidadPlatos = cantidadPlatos;
         this.calidad = calidad;
         this.horasPreparo = horasPreparo;
+        abichuelas = new ArrayList();
     }
 
     public String getIngredientes() {
@@ -122,6 +125,10 @@ public final class Abichuelas extends Potaje {
         return resultado;
     }
 
+    public void anadirAbichuela(Abichuelas a) {
+        abichuelas.add(a);
+    }
+
     @Override
     public boolean tieneChorizo() {
         boolean resultado;
@@ -134,7 +141,7 @@ public final class Abichuelas extends Potaje {
     }
 
     public int temperatura(int tiempoTotal) {
-        return tiempoTotal += horasPreparo;
+        return horasPreparo += tiempoTotal;
     }
 
 }
